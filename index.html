@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Savings Tracker</title>
+    <meta name="description" content="Your daily savings, automatically tracked.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daily Savings Tracker</h1>
+            <p class="subtitle">Your daily savings, automatically tracked.</p>
+        </header>
+
+        <main>
+            <!-- Main Balance Card -->
+            <section class="card balance-card">
+                <h2>CURRENT BALANCE</h2>
+                <div class="balance-display" id="balanceDisplay">₹0</div>
+                <p class="info-text">₹20 added automatically every day.</p>
+            </section>
+
+            <!-- Deduction Section -->
+            <section class="card action-card">
+                <h2>Deduct Amount</h2>
+                <form id="deductForm">
+                    <div class="input-group">
+                        <span class="currency-symbol">₹</span>
+                        <!-- Removed the min="0.01" so you can enter negative numbers -->
+                        <input type="number" id="deductAmount" placeholder="Enter amount" step="0.01" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Deduct Amount</button>
+                </form>
+            </section>
+
+            <!-- Reset Section -->
+            <section class="card reset-card">
+                <button id="resetBtn" class="btn danger-btn">Reset Balance</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Your data is stored locally on this device.</p>
+        </footer>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="notification" class="notification hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
